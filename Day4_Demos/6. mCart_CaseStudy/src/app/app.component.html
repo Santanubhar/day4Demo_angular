@@ -1,0 +1,35 @@
+<div>
+	<nav class='navbar navbar-default navbar-fixed-top'>
+		<div class='container-fluid'>
+			<ul class="social-network social-circle"
+				style="position: relative; top: 10px">
+				<li><a href="#" class="icoFacebook" title="Facebook"><i
+						class="fa fa-facebook fa-1x"></i></a></li>
+				<li class="divider-vertical"></li>
+				<li><a href="#" class="icoTwitter" title="Twitter"><i
+						class="fa fa-twitter fa-1x"></i></a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><div class="panel-heading  text-right" id="welcome"
+						style="display: none;"></div></li>
+				<!-- <li><div class="btn-nav"><a class="btn btn-primary btn-small navbar-btn" id="myorders" style="display:none" (click)="myOrders()">My Orders!</a></div></li> -->
+				<li><div id="welcome" style="display: none"></div></li>
+				<li class="divider-vertical"></li>
+				<li><div class="btn-nav">
+						<a id="login" class="btn btn-primary btn-small navbar-btn"
+							(click)="login()">Login</a>
+					</div></li>
+			</ul>
+		</div>
+	</nav>
+
+	<router-outlet></router-outlet>
+
+	<footer class="footer">
+		<div style="color: #ff0080">
+			<span style="position: relative; top: 20px; left: 520px">Copyright
+				&copy; UI & Markup Team, Infosys Limited</span>
+		</div>
+	</footer>
+</div>

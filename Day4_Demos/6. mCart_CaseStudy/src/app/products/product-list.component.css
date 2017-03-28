@@ -1,0 +1,48 @@
+thead {
+	color: #337AB7;
+}
+.row{
+    margin-top:40px;
+    padding: 0 10px;
+}
+
+.clickable{
+    cursor: pointer;   
+}
+
+.head-span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+
+.heading-color {
+	background-color: white;
+	color: #FF00FF;
+}
+
+.noborder {
+	boder:none;
+}
+
+.dropdown-menu.columns-3 {
+	min-width: 600px;
+}
+.dropdown-menu li a {
+	padding: 5px 15px;
+	font-weight: 300;
+}
+.multi-column-dropdown {
+	list-style: none;
+}
+
+ 
+@media (max-width: 800px) {
+	.dropdown-menu.multi-column {
+		min-width: 240px !important;
+		overflow-x: hidden;
+	}
+}
+
+.caret{border-top:4px solid magenta;}
+
+

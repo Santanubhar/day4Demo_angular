@@ -1,0 +1,17 @@
+
+<h2>My Books</h2>
+<ul class="books">
+	<li *ngFor="let book of books" [class.selected]="book === selectedBook"
+		(click)="onSelect(book)"><span class="book-element"> <span
+			class="badge">{{book.id}}</span> {{book.name}}
+	</span> 
+	</li>
+</ul>
+
+<div class="error" *ngIf="error">{{error}}</div>
+<button (click)="addBook()">Add New Book</button>
+
+<div *ngIf="selectedBook">
+	<h2>{{selectedBook.name | uppercase}} is my favourite book</h2>
+	<button (click)="gotoDetail()">View Details</button>
+</div>

@@ -1,0 +1,63 @@
+<div *ngIf="submit" class='panel panel-primary'
+	style="position: relative; top: 100px; margin: 10px;">
+	<div class='panel-heading'>{{ pageTitle }}</div>
+	<div class='panel-body'>
+		<div class='table-responsive' *ngIf="submit">
+			<table class='table'
+				*ngIf='selectedProducts && selectedProducts.length'>
+				<thead>
+					<tr style="color: blue">
+						<th>Product</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Total Price</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor='let product of selectedProducts; let i=index'>
+						<td>{{product.productName}}</td>
+						<td><input type="number" id="quant" class="col-xm-4"
+							[(ngModel)]=product.quantity min="1" max="100"
+							(change)="updateCart(product)"></td>
+						<td>{{ product.price | currency:'INR':true:'1.2-2' }}</td>
+						<td>{{product.totalPrice| currency:'INR':true:'1.2-2'}}</td>
+						<td><a (click)="remove(i)"><span title="Delete"
+								class="glyphicon glyphicon-trash"></span></a></td>
+					</tr>
+					<tr><td></td><td></td>
+						<td>Total</td>
+						<td><strong>{{grandTotal|currency:'INR':true:'1.2-2'}}</strong></td>
+						<td></td>
+					</tr>
+					<tr><td></td><td></td>
+						<td>
+							<button type="button" class="btn btn-default" (click)='onBack()' style="color: #ff0080">
+								<span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+							</button>
+						</td>
+						<td>
+							<button type="button" class="btn btn-success" (click)="checkout()">
+								Checkout <span class="glyphicon glyphicon-play"></span>
+							</button>
+						</td>
+						<td></td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div>
+<div *ngIf="!submit" class='panel panel-primary'
+	style="position: relative; top: 200px; left: 450px; align: center; width: 40%">
+	<div class='panel-heading'>{{ pageTitle }}</div>
+	<div class='panel-body'>Thank you for making the payment. Your
+		order will be shipped soon...</div>
+	<div class='panel-footer'>
+		<a class='btn btn-default' (click)='gotoProducts()'
+			style="color: #ff0080"> <i
+			class='glyphicon glyphicon-chevron-left'></i> Go to Products Page
+		</a>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container" style="position: relative; top: 100px;">
+	<div class="row">
+		<div class="col-xs-7 col-xs-offset-3">
+			<div class='panel panel-primary'>
+				<div class='panel-heading'>{{pageTitle}}</div>
+				<div class='panel-body'>
+					<table class="table table-striped" style="background-color: none">
+						<tr>
+							<td align="center"><img [src]='product.imageUrl'
+								[style.width.px]='imageWidth' [style.margin.px]='imageMargin'
+								class='img-thumbnail' /></td>
+
+							<td>
+								<div style="font-size: 20px; color: #ff0080">{{product.productName}}</div>
+								<div>by {{product.manufacturer}}</div>
+								<div>
+									<ratings style="color: #ff8040" [rate]='product.rating'></ratings>
+								</div>
+								<hr style="background-color: #ff0080">
+								<div>Price: {{product.price}}</div>
+
+								<div>Description: {{product.description}}</div>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class='panel-footer'>
+					<a class='btn btn-default' (click)='onBack()' style='width: 80px'>
+						<i class='glyphicon glyphicon-chevron-left'></i> Back
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
